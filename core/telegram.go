@@ -508,6 +508,7 @@ func cleanResultForTelegram(result string) string {
 	}
 	lines := strings.Split(result, "\n")
 	var cleaned []string
+	prevLine := ""
 	for _, line := range lines {
 		trimmed := strings.TrimSpace(line)
 		if strings.HasPrefix(trimmed, "PROGRESS:") ||
@@ -517,16 +518,32 @@ func cleanResultForTelegram(result string) string {
 			trimmed == "" {
 			continue
 		}
+		if trimmed == prevLine {
+			continue
+		}
+		prevLine = trimmed
 		cleaned = append(cleaned, line)
 	}
-	return strings.TrimSpace(strings.Join(cleaned, "\n"))
+	result = strings.Join(cleaned, "\n")
+	result = stripMarkdown(result)
+	return strings.TrimSpace(result)
+}
+
+func stripMarkdown(s string) string {
+	s = regexp.MustCompile(`\*\*(.+?)\*\*`).ReplaceAllString(s, "<b>$1</b>")
+	s = regexp.MustCompile(`\*(.+?)\*`).ReplaceAllString(s, "<i>$1</i>")
+	s = regexp.MustCompile(`__(.+?)__`).ReplaceAllString(s, "<b>$1</b>")
+	s = regexp.MustCompile("`([^`]+)`").ReplaceAllString(s, "<code>$1</code>")
+	s = regexp.MustCompile(`^#+\s+`).ReplaceAllString(s, "")
+	s = regexp.MustCompile(`\[([^\]]+)\]\(([^)]+)\)`).ReplaceAllString(s, "$1")
+	s = strings.TrimLeft(s, "- > *`#")
+	return s
 }
 
 func (b *TelegramBot) safeSend(m *telegram.NewMessage, text string) {
 	if strings.TrimSpace(text) == "" {
 		return
 	}
-	text = telegram.HTMLToMarkdownV2(text)
 	if _, err := m.Reply(text, &telegram.SendOptions{ParseMode: telegram.HTML}); err != nil {
 		plain := strings.NewReplacer(
 			"<b>", "", "</b>", "", "<i>", "", "</i>", "",

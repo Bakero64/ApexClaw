@@ -42,9 +42,14 @@ var All = []*ToolDef{
 
 	WebFetch,
 	WebSearch,
+	TavilySearch,
+	TavilyExtract,
+	TavilyResearch,
 
 	IMDBSearch,
 	IMDBGetTitle,
+
+	YouTubeTranscript,
 
 	TVMazeSearch,
 	TVMazeNextEpisode,
@@ -148,6 +153,13 @@ var All = []*ToolDef{
 	UnitConvert,
 	TimezoneConvert,
 	Translate,
+	Humanize,
+	FrontendDesign,
+
+	MCPCall,
+	MCPList,
+	MCPAuth,
+	MCPConfig,
 
 	ColorInfo,
 
@@ -156,6 +168,14 @@ var All = []*ToolDef{
 	YouTubeSearch,
 	ReadEmail,
 	SendEmail,
+	GmailListMessages,
+	GmailGetMessage,
+	GmailSendMessage,
+	GmailModifyLabels,
+	CalendarListEvents,
+	CalendarCreateEvent,
+	CalendarDeleteEvent,
+	CalendarUpdateEvent,
 	TextToSpeech,
 
 	TodoAdd,
